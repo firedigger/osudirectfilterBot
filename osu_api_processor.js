@@ -4,7 +4,8 @@
 
 var osu_api = require('./osu_api');
 var fs = require('fs');
-var osu = new osu_api.Api('0f5737accd3afa91a03e620495d1e448ef02e4b5');
+var config = JSON.parse(fs.readFileSync('config.json'));
+var osu = new osu_api.Api(config.api_key);
 
 function handle_error(error, args)
 {
